@@ -5,10 +5,13 @@
             show_page: false,
             onload_menu: false,
             menu_show: false,
-            card_top: 100
+            card_top: 100,
+            currentSubtitleIndex: 0,
+            currentDescriptionIndex: 0
         },
         created: function () {
             var that = this
+            
             window.onload = function () {
                 that.show_page = true
                 document.getElementById("loadcontent").style.opacity = 0
@@ -22,7 +25,68 @@
             }
         },
         mounted: function () {
-            var that = this
+            var that = this;
+            // 定义格言数组 - 增加更多格言
+            var subtitles = [
+                "技进乎道，文以载道", 
+                "分享技术，记录成长", 
+                "知行合一，学以致用",
+                "学而时习之，不亦说乎",
+                "温故而知新", 
+                "知之者不如好之者，好之者不如乐之者",
+                "博学之，审问之，慎思之，明辨之，笃行之",
+                "路漫漫其修远兮，吾将上下而求索",
+                "山重水复疑无路，柳暗花明又一村"
+            ];
+            var descriptions = [
+                "花念奴wty的个人技术空间", 
+                "记录点滴，分享感悟", 
+                "探索技术，追求卓越",
+                "技术分享，知识传承",
+                "编程路上，永不止步",
+                "代码如诗，逻辑为韵", 
+                "学无止境，勤于思考",
+                "技术创新，开拓进取",
+                "专注技术，创造价值",
+                "技术人生，精彩纷呈",
+                "代码世界，自由翱翔"
+            ];
+            
+            // 设置随机格言轮播
+            setInterval(function() {
+                // 随机选择新的格言索引
+                var newSubtitleIndex = Math.floor(Math.random() * subtitles.length);
+                var newDescriptionIndex = Math.floor(Math.random() * descriptions.length);
+                
+                // 更新DOM元素内容和添加动画效果
+                var subtitleElement = document.getElementById('rotating-subtitle');
+                var descriptionElement = document.getElementById('rotating-description');
+                
+                if (subtitleElement) {
+                    subtitleElement.classList.add('fade-out');
+                    setTimeout(function() {
+                        subtitleElement.textContent = subtitles[newSubtitleIndex];
+                        subtitleElement.classList.remove('fade-out');
+                        subtitleElement.classList.add('fade-in');
+                        setTimeout(function() {
+                            subtitleElement.classList.remove('fade-in');
+                        }, 600);
+                    }, 300);
+                }
+                
+                if (descriptionElement) {
+                    descriptionElement.classList.add('fade-out');
+                    setTimeout(function() {
+                        descriptionElement.textContent = descriptions[newDescriptionIndex];
+                        descriptionElement.classList.remove('fade-out');
+                        descriptionElement.classList.add('fade-in');
+                        setTimeout(function() {
+                            descriptionElement.classList.remove('fade-in');
+                        }, 600);
+                    }, 300);
+                }
+            }, 5000); // 每5秒随机切换一次
+            
             window.addEventListener('scroll', function (e) {
                 that.menu_show = false
             })

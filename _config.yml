@@ -5,7 +5,7 @@
 language: zh
 
 # avatar image url
-head_img: images/avatar.png
+head_img: images/1.png
 
 # home page head info block
 head_block_enable: true
@@ -21,41 +21,46 @@ home_background: "background-image:url('home.jpg')"
 
 # main menu navigation
 menu:
-  home:
+  首页:
     icon:
       name: home
       theme: filled
     src: /
-  about:
+  项目:
     icon:
-      name: idcard
+      name: folder
       theme: filled
-    src: /about # 当你的博客root为 '/' 时
-  archives:
+    src: /项目
+  B站:
+    icon:
+      name: youtube
+      theme: filled
+    src: http://localhost:5000/
+  联系:
+    icon:
+      name: contacts
+      theme: filled
+    src: /联系
+  归档:
     icon:
       name: folder
       theme: filled
     src: /archives
-  categories:
+  分类:
     icon:
       name: book
       theme: filled
-    src: /like/categories # 当你的博客root不为 '/'，而是其它时，例如 '/like/'
-  tags:
+    src: /categories
+  标签:
     icon:
       name: tags
       theme: filled
-    src: /like/tags
-  英文博客:
-    icon:
-      name: compass
-      theme: filled
-    src: https://en.korilin.com
+    src: /tags
 
 # side info card
 card:
   enable: true
-  description: ["正しさなんてもの", "人のモノサシによって変わる"]
+  description: ["探索技术，追求卓越"]
   icon_links:
     github:
       icon:
@@ -63,25 +68,25 @@ card:
         name: github
         theme: filled
         src:
-      link: https://github.com/korilin
+      link: https://github.com/wtyss
     twitter:
       icon:
         type: antd-icon
         name: twitter
         theme:
         src:
-      link: https://twitter.com/korilin_dev
+      link: https://twitter.com/wty
   friend_links:
-    英文技术博客: https://en.korilin.com
-    日语记录博客: https://jp.korilin.com
+    个人主页: /
+    技术分享: /archives
 
 # footer info
 footer:
   since: 2018
   # Customize the server domain name ICP
   ICP:
-    enable: false
-    code: 
+    enable: true
+    code: 暂未备案 
 
 # Gitalk
 # https://github.com/gitalk/gitalk

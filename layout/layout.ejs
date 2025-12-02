@@ -34,16 +34,18 @@
     <meta name="description" content="<%- config.description %> ">
     <meta name="keywords" content="<%- config.keywords %> ">
     <link rel="icon" href="<%- rootlink %><%- theme.head_img %>">
-    <link rel="stylesheet" href="<%- rootlink %>css/antd.min.css">
+    <link rel="stylesheet" href="<%- rootlink %>css/antd.min.css?v=<%= new Date().getTime() %>">
     <% if(theme.style == "night"){ %>
-    <link rel="stylesheet" href="<%- rootlink %>css/night-theme.css">
+    <link rel="stylesheet" href="<%- rootlink %>css/night-theme.css?v=<%= new Date().getTime() %>">
     <% }else if(theme.style == "maiden"){ %>
-    <link rel="stylesheet" href="<%- rootlink %>css/maiden-theme.css">
+    <link rel="stylesheet" href="<%- rootlink %>css/maiden-theme.css?v=<%= new Date().getTime() %>">
     <% }else{ %>
-    <link rel="stylesheet" href="<%- rootlink %>css/full-theme.css">
+    <link rel="stylesheet" href="<%- rootlink %>css/full-theme.css?v=<%= new Date().getTime() %>">
     <% } %>
-    <script src="<%- rootlink %>js/vue.js"></script>
-    <script src="<%- rootlink %>js/antd.min.js"></script>
+    <link rel="stylesheet" href="<%- rootlink %>css/menu.css?v=<%= new Date().getTime() %>">
+    <link rel="stylesheet" href="<%- rootlink %>css/layout.css?v=<%= new Date().getTime() %>">
+    <script src="<%- rootlink %>js/vue.js?v=<%= new Date().getTime() %>"></script>
+    <script src="<%- rootlink %>js/antd.min.js?v=<%= new Date().getTime() %>"></script>
 </head>
 
 <body>
