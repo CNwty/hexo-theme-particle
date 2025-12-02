@@ -91,7 +91,7 @@ footer:
 # Gitalk
 # https://github.com/gitalk/gitalk
 gitalk:
-  enable: true
+  enable: false
   clientID: # GitHub Application Client ID
   clientSecret: # GitHub Application Client Secret
   repo: hexo-theme-particle # The name of repository of store comments
